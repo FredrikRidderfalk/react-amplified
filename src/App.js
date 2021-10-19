@@ -4,6 +4,9 @@ import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
+import { I18n } from "aws-amplify";
+import { Translations } from "@aws-amplify/ui-components";
+
 // import awsconfig from "./aws-exports";
 import awsExports from "./aws-exports";
 // Amplify.configure(awsconfig);
@@ -73,6 +76,13 @@ const App = () => {
     </div>
   );
 };
+
+I18n.putVocabulariesForLanguage("en-US", {
+  [Translations.SIGN_IN_HEADER_TEXT]: "Log In To Your Account",
+  [Translations.SIGN_IN_ACTION]: "Log In",
+  [Translations.BACK_TO_SIGN_IN]: "Back to Log In",
+  [Translations.SIGN_IN_TEXT]: "Log In",
+});
 
 const styles = {
   container: {

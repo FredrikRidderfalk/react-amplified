@@ -1,7 +1,7 @@
 :root {
   --amplify-primary-color: #ae00ff;
-  --amplify-primary-tint: #ff7359;
-  --amplify-primary-shade: #e0573e;
+  --amplify-primary-tint: #fa5bff;
+  --amplify-primary-shade: #9a5bff;
 }
 
 body {
@@ -16,4 +16,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+amplify-sign-up {
+  color: mediumaquamarine;
 }
