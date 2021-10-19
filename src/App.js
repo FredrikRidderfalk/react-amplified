@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Amplify, { API, graphqlOperation } from "aws-amplify";
+import Amplify, { API, graphqlOperation, Auth } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
+// import awsconfig from "./aws-exports";
 import awsExports from "./aws-exports";
+// Amplify.configure(awsconfig);
 Amplify.configure(awsExports);
 
 const initialState = { name: "", description: "" };
@@ -44,6 +47,7 @@ const App = () => {
 
   return (
     <div style={styles.container}>
+      <AmplifySignOut />
       <h2>My Todos</h2>
       <input
         onChange={(event) => setInput("name", event.target.value)}
@@ -98,4 +102,4 @@ const styles = {
   },
 };
 
-export default App;
+export default withAuthenticator(App);
