@@ -50,7 +50,6 @@ const App = () => {
 
   return (
     <div style={styles.container}>
-      <AmplifySignOut />
       <h2>My Todos</h2>
       <input
         onChange={(event) => setInput("name", event.target.value)}
@@ -73,6 +72,7 @@ const App = () => {
           <p style={styles.todoDescription}>{todo.description}</p>
         </div>
       ))}
+      <AmplifySignOut />
     </div>
   );
 };
